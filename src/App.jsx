@@ -49,9 +49,9 @@ const contacts = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.14),_transparent_30%),linear-gradient(180deg,#f8fafc_0%,#eef2ff_100%)] text-slate-900">
+    <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-16 pt-6 sm:px-8 lg:px-12">
-        <header className="flex items-center justify-between gap-4">
+        <header className="flex items-center justify-between gap-4 border-b border-slate-200 pb-5">
           <a href="#topo" className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-950">
             João Pedro
           </a>
@@ -69,9 +69,9 @@ function App() {
         </header>
 
         <main id="topo" className="flex-1">
-          <section className="grid gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-24">
+          <section className="grid gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-20">
             <div className="max-w-3xl">
-              <p className="mb-5 inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur">
+              <p className="mb-5 inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
                 Desenvolvedor Full Stack
               </p>
               <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
@@ -91,20 +91,20 @@ function App() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#projetos"
-                  className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
                 >
                   Ver projetos
                 </a>
                 <a
                   href="mailto:joaopedrodacruz.dev@gmail.com"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-white"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50"
                 >
                   Falar por e-mail
                 </a>
               </div>
             </div>
 
-            <aside className="rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] backdrop-blur">
+            <aside className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.22)]">
               <div className="space-y-6">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
@@ -117,7 +117,7 @@ function App() {
 
                 <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                   {highlights.map((item) => (
-                    <div key={item.label} className="rounded-2xl bg-slate-50 p-4">
+                    <div key={item.label} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                       <p className="text-lg font-semibold text-slate-950">{item.value}</p>
                       <p className="mt-1 text-sm leading-6 text-slate-600">{item.label}</p>
                     </div>
@@ -140,7 +140,7 @@ function App() {
 
               <div className="grid gap-4 md:grid-cols-3">
                 {technicalAreas.map((area) => (
-                  <article key={area.title} className="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm">
+                  <article key={area.title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
                     <h3 className="text-lg font-semibold tracking-tight text-slate-950">{area.title}</h3>
                     <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
                       {area.items.map((item) => (
@@ -196,14 +196,14 @@ function App() {
           </section>
 
           <section id="contato" className="border-t border-slate-200 py-16">
-            <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-45px_rgba(15,23,42,0.75)] sm:p-10">
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.2)] sm:p-10">
               <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">Contato</p>
-                  <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Contato</p>
+                  <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
                     Aberto para trabalho em backend e integração de API.
                   </h2>
-                  <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
+                  <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
                     E-mail e GitHub abaixo para contato direto.
                   </p>
                 </div>
@@ -215,10 +215,10 @@ function App() {
                       href={contact.href}
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
-                      className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm transition hover:bg-white/10"
+                      className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm transition hover:border-slate-300 hover:bg-white"
                     >
-                      <span className="text-slate-300">{contact.label}</span>
-                      <span className="font-medium text-white">{contact.value}</span>
+                      <span className="text-slate-500">{contact.label}</span>
+                      <span className="font-medium text-slate-900">{contact.value}</span>
                     </a>
                   ))}
                 </div>
